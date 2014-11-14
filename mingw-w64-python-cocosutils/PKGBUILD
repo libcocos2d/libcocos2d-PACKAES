@@ -9,8 +9,14 @@ pkgdesc="Swiss Army Knife for managing libcocos2d projects (mingw-w64)"
 arch=('any')
 license=('NONE')
 url="http://github.com/libcocos2d/cocosutils"
-depends=("${MINGW_PACKAGE_PREFIX}-python2" "${MINGW_PACKAGE_PREFIX}-python3")
-source=("http://github.com/libcocos2d/cocosutils.git")
+
+depends=("${MINGW_PACKAGE_PREFIX}-python2" 
+         "${MINGW_PACKAGE_PREFIX}-python3")
+
+makedepends=("${MINGW_PACKAGE_PREFIX}-python2-setuptools"
+             "${MINGW_PACKAGE_PREFIX}-python3-setuptools")
+
+source=("${_realname}"::"git+https://github.com/libcocos2d/cocosutils.git")
 md5sums=('SKIP')
 
 prepare() {
